@@ -1,22 +1,22 @@
 <!DOCTYPE html>
-<html lang="en" xmlns:th="https://www.thymeleaf.org">
+<html lang="en" xmlns:th="https://thymeleaf.org">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="utf-8"/>
   <title>Created by Springboot Framework</title>
 </head>
 <body>
-<h1>Books List</h1>
-<table border="1" rules="all">
-  <tr>
-    <th>ID</th>
-    <th>Title</th>
-    <th>Publisher</th>
-  </tr>
-  <tr th:each="book : ${books_list}">
-    <td th:text="${book.id}"></td>
-    <td th:text="${book.bookTitle}"></td>
-    <td th:text="${book.publisher.name}"></td>
-  </tr>
-</table>
+  <h1>Books List</h1>
+  <table border="1" rules="all">
+<!--    <tr>-->
+<!--      <th>ID</th>-->
+<!--      <th>Title</th>-->
+<!--      <th>Publisher</th>-->
+<!--    </tr>-->
+    <tr th:each="book: ${books}">
+      <td th:text="${book.id}">1.1</td>
+      <td th:text="${book.bookTitle}">1.2</td>
+      <td th:text="${book.itsPublisher.name}">1.3</td>
+    </tr>
+  </table>
 </body>
 </html>
