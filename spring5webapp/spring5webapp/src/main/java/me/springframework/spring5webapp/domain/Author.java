@@ -5,7 +5,7 @@ import java.util.HashSet;
 import java.util.Objects;
 import java.util.Set;
 
-//Clarifies how this P.O.J.O. will be treaded by J.P.A.
+//Clarifies how this P.O.J.O. will be treated by J.P.A.
 @Entity
 public class Author
 {
@@ -70,7 +70,6 @@ public class Author
                 "id=" + id +
                 ", fName='" + fName + '\'' +
                 ", lName='" + lName + '\'' +
-                ", booksWritten=" + booksWritten +
                 '}';
     }
 

@@ -84,7 +84,6 @@ public class Book
                 "id=" + id +
                 ", bookTitle='" + bookTitle + '\'' +
                 ", isbn='" + isbn + '\'' +
-                ", itsAuthors=" + itsAuthors +
                 ", itsPublisher=" + itsPublisher +
                 '}';
     }
