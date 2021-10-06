@@ -21,8 +21,7 @@ public class Publisher
     private String zip;
 
     //Relation between this Book and Publisher
-    @OneToMany
-    @JoinColumn(name = "publisher_id")
+    @OneToMany(cascade = CascadeType.MERGE, mappedBy = "itsPublisher")
     private Set<Book> publishedBooks = new HashSet<>();
 
     public Publisher() {
