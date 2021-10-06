@@ -1,5 +1,6 @@
 package me.springframework.spring5webapp.controllers;
 
+import me.springframework.spring5webapp.domain.Book;
 import me.springframework.spring5webapp.repositories.BookRepo;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -18,8 +19,9 @@ public class BookController
     @RequestMapping("/books")
     public String getBooks(Model booksModel)
     {
+        //Creates an M.V.C. model for books with the name "books" and with content everything found inside bookRepoObj.
         booksModel.addAttribute("books", bookRepoObj.findAll());
 
-        return "/books/list.html";
+        return "/books/list";
     }
 }
