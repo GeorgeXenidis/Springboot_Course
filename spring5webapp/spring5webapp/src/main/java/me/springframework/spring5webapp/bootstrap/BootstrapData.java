@@ -28,31 +28,34 @@ public class BootstrapData implements CommandLineRunner
     public void run(String... args) throws Exception
     {
         //Create a few basic elements to test the code.
+
+        //First registration.
         Author eric = new Author("Eric", "Evans");
         Book ddd = new Book("Domain Driven Design", "123123");
         Publisher goodReads = new Publisher("Good Reads", "Address Line 1", "Chicago mayby", "America", "85400");
 
+        //Second registration.
+        Author rod = new Author("Rod", "Johnson");
+        Book noEJB = new Book("J2EE Development without EJB", "1234534567");
+
         //Update the lists/fields of each entity and the CRUD repositories.
         eric.getBooksWritten().add(ddd);
         authorRepoObj.save(eric);
-        ddd.getItsAuthors().add(eric);
-        bookRepoObj.save(ddd);
-        ddd.setItsPublisher(goodReads);
-        publisherRepoObj.save(goodReads);
 
-        //Same as above.
-        Author rod = new Author("Rod", "Johnson");
-        Book noEJB = new Book("J2EE Development without EJB", "1234534567");
-        //We assume here that the publisher is the same as before...
-
-        //Update the lists/fields of each entity and the CRUD repositories.
         rod.getBooksWritten().add(noEJB);
         authorRepoObj.save(rod);
+
+        publisherRepoObj.save(goodReads);
+
+        ddd.getItsAuthors().add(eric);
+        ddd.setItsPublisher(goodReads);
+        bookRepoObj.save(ddd);
+        goodReads.getPublishedBooks().add(ddd);
+
         noEJB.getItsAuthors().add(rod);
-        bookRepoObj.save(noEJB);
         noEJB.setItsPublisher(goodReads);
         bookRepoObj.save(noEJB);
-        publisherRepoObj.save(goodReads);
+        goodReads.getPublishedBooks().add(ddd);
 
         System.out.println("Started in Bootstrap");
         System.out.println("Number of stored books: " + bookRepoObj.count());
