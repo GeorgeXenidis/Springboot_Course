@@ -9,13 +9,13 @@
 <table border="1" rules="all">
     <tr>
         <td>ID</td>
-        <td>First Name</td>
-        <td>Last Name</td>
+        <td>Publisher Name</td>
+        <td>Zip-Code</td>
     </tr>
-    <tr th:each="author : ${authors}">
-        <td th:text="${author.id}"></td>
-        <td th:text="${author.fName}"></td>
-        <td th:text="${author.lName}"></td>
+    <tr th:each="publisher : ${publishers}">
+        <td th:text="${publisher.id}"></td>
+        <td th:text="${publisher.name}"></td>
+        <td th:text="${publisher.zip}"></td>
     </tr>
 </table>
 </body>
